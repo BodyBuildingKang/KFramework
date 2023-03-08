@@ -1,3 +1,4 @@
+
 /** 
 *    Class Description: 资源(ResRequest 单位)请求数据结构
 *
@@ -7,16 +8,12 @@
 *
 */
 
- using System;
- using System.Collections;
-using System.Collections.Generic;
- using Unity.VisualScripting;
- using UnityEditor.PackageManager.Requests;
- using UnityEngine;
+using System;
+using System.Collections;
 
 namespace kAsset
 {
-      public class ResRequest : IEnumerator
+      public class Request : IEnumerator
       {
             public enum Result {
                 Default,
@@ -31,7 +28,7 @@ namespace kAsset
                 Complete
             }
 
-            public Action<ResRequest> completed;
+            public Action<Request> completed;
             public Result result { get; protected set; } = Result.Default;
             public Status status { get; protected set; } = Status.Wait;
             public bool isDone => status == Status.Complete;
