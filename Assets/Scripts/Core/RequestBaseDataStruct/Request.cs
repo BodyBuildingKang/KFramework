@@ -80,7 +80,7 @@ namespace kAsset
 
             public void SendRequest()
             {
-                // Scheduler.Enqueue(this);
+                Scheduler.Enqueue(this);
             }
 
             public void Cancel()

@@ -65,6 +65,7 @@ namespace kAsset
                 requestqueueQueue = new RequestQueue() { key = key, maxRequests = MaxRequests };
                 _dictionarys.Add(key,requestqueueQueue);
                 _queues.Enqueue(requestqueueQueue);
+                // TODO: 这里可以考虑给 Request 加个优先级。 可以用权重(符合项目的策划加，比如枚举，数字等)来标记优先级
             }
             requestqueueQueue.Enqueue(request);
         }
